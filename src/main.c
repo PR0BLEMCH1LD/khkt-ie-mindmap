@@ -1,5 +1,8 @@
 #include <stdio.h>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 int main() {
-	printf("%d", __STDC_VERSION__);
+	glfwInit();
+	gladLoadGL();
 }
