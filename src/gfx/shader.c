@@ -25,10 +25,6 @@ static GLuint compile(const char* path, GLenum type) {
     return handle;
 }
 
-void shader_bind(Shader* self) {
-    glUseProgram(self->handle);
-}
-
 void shader_init(Shader* self, const char* vpath, const char* fpath) {
     self->vhandle = compile(vpath, GL_VERTEX_SHADER);
     self->fhandle = compile(fpath, GL_FRAGMENT_SHADER);
@@ -40,4 +36,12 @@ void shader_init(Shader* self, const char* vpath, const char* fpath) {
 
 void shader_destroy(Shader* self) {
     glDeleteProgram(self->handle);
+}
+
+void shader_bind(Shader* self) {
+    glUseProgram(self->handle);
+}
+
+void shader_uniform_mat4(Shader* self, const char* name, mat4s mat) {
+    glUniformMatrix4fv(glGetUniformLocation(self->handle, name), 1, GL_FALSE, (const GLfloat*)&mat.raw);
 }

@@ -18,7 +18,7 @@ void _mesh_init(Mesh* self, void* data, u64 data_size, u64 data_size_per_element
 
 	bo_buffer_data(&self->vbo, data, data_size);
 	bo_buffer_data(&self->ebo, indices, indices_size);
-	vao_attrib(&self->vao, &self->vbo, 0, 2, GL_DOUBLE, 2 * data_size_per_element, 0);
+	vao_attrib(&self->vao, &self->vbo, 0, 3, GL_DOUBLE, 3 * data_size_per_element, 0);
 }
 
 void mesh_render(Mesh* self) {

@@ -174,8 +174,8 @@
     <ClInclude Include="src\util\utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\shaders\3d.frag" />
-    <None Include="res\shaders\3d.vert" />
+    <None Include="res\shaders\default-3d.frag" />
+    <None Include="res\shaders\default-3d.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

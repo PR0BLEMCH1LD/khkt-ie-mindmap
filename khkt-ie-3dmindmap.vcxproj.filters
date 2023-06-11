@@ -85,10 +85,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\shaders\3d.vert">
+    <None Include="res\shaders\default-3d.vert">
       <Filter>Resource Files\shaders</Filter>
     </None>
-    <None Include="res\shaders\3d.frag">
+    <None Include="res\shaders\default-3d.frag">
       <Filter>Resource Files\shaders</Filter>
     </None>
   </ItemGroup>
