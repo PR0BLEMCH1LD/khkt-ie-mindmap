@@ -80,18 +80,6 @@
     <ClInclude Include="src\gfx\mesh.h">
       <Filter>Source Files\gfx</Filter>
     </ClInclude>
-    <ClInclude Include="src\util\ivec2.h">
-      <Filter>Source Files\util</Filter>
-    </ClInclude>
-    <ClInclude Include="src\util\ivec2s.h">
-      <Filter>Source Files\util</Filter>
-    </ClInclude>
-    <ClInclude Include="src\util\ivec3.h">
-      <Filter>Source Files\util</Filter>
-    </ClInclude>
-    <ClInclude Include="src\util\ivec3s.h">
-      <Filter>Source Files\util</Filter>
-    </ClInclude>
     <ClInclude Include="src\util\macros.h">
       <Filter>Source Files\util</Filter>
     </ClInclude>

@@ -5,11 +5,10 @@
 #include "../util/utils.h"
 
 typedef struct Camera {
-	vec3s position;
-	vec3s direction, right, up;
-	f32 fov, aspect_ratio, znear, zfar;
 	f32 pitch, yaw;
+	vec3s direction, right, up;
 	mat4s view, projection;
+	vec3s position;
 } Camera;
 
 void camera_init(Camera *self, f32 fov, f32 aspect_ratio, f32 znear, f32 zfar);

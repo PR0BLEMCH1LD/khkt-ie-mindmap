@@ -169,10 +169,6 @@
     <ClInclude Include="src\gfx\bo.h" />
     <ClInclude Include="src\gfx\window.h" />
     <ClInclude Include="src\state.h" />
-    <ClInclude Include="src\util\ivec2.h" />
-    <ClInclude Include="src\util\ivec2s.h" />
-    <ClInclude Include="src\util\ivec3.h" />
-    <ClInclude Include="src\util\ivec3s.h" />
     <ClInclude Include="src\util\macros.h" />
     <ClInclude Include="src\util\fmath.h" />
     <ClInclude Include="src\util\timer.h" />

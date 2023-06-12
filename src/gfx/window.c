@@ -63,6 +63,7 @@ static void button_array_update(u16 last, Button *buttons) {
 }
 
 static void init() {
+	window.mouse.not_first = false;
 	window.tracker.last_second = NOW();
 
 	window.init();
