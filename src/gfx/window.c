@@ -2,47 +2,47 @@
 
 Window window;
 
-static void frame_buffer_size_callback(GLFWwindow* handle, int width, int height) {
+static void frame_buffer_size_callback(GLFWwindow *handle, int width, int height) {
 	glViewport(0, 0, width, height);
 
 	window.size = (ivec2s){ { width, height } };
 }
 
-static void mouse_button_callback(GLFWwindow* handle, int button, int action, int mods) {
+static void mouse_button_callback(GLFWwindow *handle, int button, int action, int mods) {
 	if (button < 0) {
 		return;
 	}
 
 	switch (action) {
-	case GLFW_PRESS:
-		window.mouse.buttons[button].down = true;
-		break;
-	case GLFW_RELEASE:
-		window.mouse.buttons[button].down = false;
-		break;
-	default:
-		break;
+		case GLFW_PRESS:
+			window.mouse.buttons[button].down = true;
+			break;
+		case GLFW_RELEASE:
+			window.mouse.buttons[button].down = false;
+			break;
+		default:
+			break;
 	}
 }
 
-static void key_callback(GLFWwindow* handle, int key, int scancode, int action, int mods) {
+static void key_callback(GLFWwindow *handle, int key, int scancode, int action, int mods) {
 	if (key < 0) {
 		return;
 	}
 
 	switch (action) {
-	case GLFW_PRESS:
-		window.keyboard.keys[key].down = true;
-		break;
-	case GLFW_RELEASE:
-		window.keyboard.keys[key].down = false;
-		break;
-	default:
-		break;
+		case GLFW_PRESS:
+			window.keyboard.keys[key].down = true;
+			break;
+		case GLFW_RELEASE:
+			window.keyboard.keys[key].down = false;
+			break;
+		default:
+			break;
 	}
 }
 
-static void cursor_pos_callback(GLFWwindow* handle, double xpos, double ypos) {
+static void cursor_pos_callback(GLFWwindow *handle, double xpos, double ypos) {
 	/*vec2s pos = { { xpos, ypos } };
 
 	window.mouse.delta = window.mouse.not_first ?
@@ -54,7 +54,7 @@ static void cursor_pos_callback(GLFWwindow* handle, double xpos, double ypos) {
 	window.mouse.position = pos;*/
 }
 
-static void button_array_update(u16 last, Button* buttons) {
+static void button_array_update(u16 last, Button *buttons) {
 	for (u16 idx = 0; idx < last; idx++) {
 		buttons[idx].pressed = buttons[idx].down && !buttons[idx].last;
 		buttons[idx].last = buttons[idx].down;

@@ -83,6 +83,12 @@
     <ClInclude Include="src\util\ivec3s.h">
       <Filter>Source Files\util</Filter>
     </ClInclude>
+    <ClInclude Include="src\util\macros.h">
+      <Filter>Source Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gfx\camera.h">
+      <Filter>Source Files\gfx</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\default-3d.vert">

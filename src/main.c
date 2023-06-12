@@ -55,7 +55,7 @@ static void destroy() {
 }
 
 int main() {
-	window.size = (ivec2s){{ 1200, 720 }};
+	window.size = (ivec2s){ { 1200, 720 } };
 	window_init(init, tick, update, render, destroy);
 
 	window_loop();

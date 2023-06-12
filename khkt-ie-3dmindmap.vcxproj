@@ -159,6 +159,7 @@
     <ClCompile Include="src\main.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\gfx\camera.h" />
     <ClInclude Include="src\gfx\gfx.h" />
     <ClInclude Include="src\gfx\mesh.h" />
     <ClInclude Include="src\gfx\shader.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="src\util\ivec2s.h" />
     <ClInclude Include="src\util\ivec3.h" />
     <ClInclude Include="src\util\ivec3s.h" />
+    <ClInclude Include="src\util\macros.h" />
     <ClInclude Include="src\util\types.h" />
     <ClInclude Include="src\util\utils.h" />
   </ItemGroup>

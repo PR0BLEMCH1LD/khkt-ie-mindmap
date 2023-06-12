@@ -9,9 +9,9 @@ typedef struct BO {
 	GLint type;
 } BO;
 
-void bo_init(BO* self, GLint type);
-void bo_destroy(BO* self);
-void bo_buffer_data(BO* self, void* data, GLsizeiptr size);
-void bo_bind(BO* self);
+void bo_init(BO *self, GLint type);
+void bo_destroy(BO *self);
+void bo_buffer_data(BO *self, void *data, GLsizeiptr size);
+void bo_bind(BO *self);
 
 #endif

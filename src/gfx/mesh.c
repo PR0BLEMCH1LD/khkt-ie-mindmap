@@ -1,8 +1,8 @@
 #include "mesh.h"
 #include "../state.h"
 
-void _mesh_init(Mesh* self, void* data, u64 data_size, u64 data_size_per_element, void* indices, u64 indices_size, u64 indices_size_per_element) {
-	self->data = (MeshBuffer) {
+void _mesh_init(Mesh *self, void *data, u64 data_size, u64 data_size_per_element, void *indices, u64 indices_size, u64 indices_size_per_element) {
+	self->data = (MeshBuffer){
 		.data = data,
 		.size = data_size,
 		.count = data_size / data_size_per_element
@@ -21,14 +21,14 @@ void _mesh_init(Mesh* self, void* data, u64 data_size, u64 data_size_per_element
 	vao_attrib(&self->vao, &self->vbo, 0, 3, GL_DOUBLE, 3 * data_size_per_element, 0);
 }
 
-void mesh_render(Mesh* self) {
+void mesh_render(Mesh *self) {
 	shader_bind(&state.shader);
 	vao_bind(&self->vao);
 	bo_bind(&self->ebo);
 	glDrawElements(GL_TRIANGLES, self->indices.count, GL_UNSIGNED_INT, 0);
 }
 
-void mesh_destroy(Mesh* self) {
+void mesh_destroy(Mesh *self) {
 	vao_destroy(&self->vao);
 	bo_destroy(&self->vbo);
 	bo_destroy(&self->ebo);

@@ -21,7 +21,7 @@ typedef struct Keyboard {
 } Keyboard;
 
 typedef struct Window {
-	GLFWwindow* handle;
+	GLFWwindow *handle;
 	ivec2s size;
 	Keyboard keyboard;
 	Mouse mouse;
