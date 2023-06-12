@@ -22,6 +22,9 @@
     <Filter Include="Resource Files\shaders">
       <UniqueIdentifier>{73104010-b12f-4a4b-a574-5cef6f284d5e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\world">
+      <UniqueIdentifier>{5056ec06-aa2c-41d1-920e-6b48eccbc9c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.c">
@@ -41,6 +44,12 @@
     </ClCompile>
     <ClCompile Include="src\gfx\mesh.c">
       <Filter>Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gfx\camera.c">
+      <Filter>Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\world.c">
+      <Filter>Source Files\world</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +97,15 @@
     </ClInclude>
     <ClInclude Include="src\gfx\camera.h">
       <Filter>Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\world.h">
+      <Filter>Source Files\world</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\timer.h">
+      <Filter>Source Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\fmath.h">
+      <Filter>Source Files\util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -16,5 +16,7 @@
 #include "ivec3s.h"
 
 #include "types.h"
+#include "timer.h"
+#include "fmath.h"
 
 #endif

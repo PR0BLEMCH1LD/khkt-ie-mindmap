@@ -20,11 +20,18 @@ typedef struct Keyboard {
 	Button keys[GLFW_KEY_LAST];
 } Keyboard;
 
+typedef struct Tracker {
+	u64 last_second;
+	u32 frames;
+	u32 fps;
+} Tracker;
+
 typedef struct Window {
 	GLFWwindow *handle;
 	ivec2s size;
 	Keyboard keyboard;
 	Mouse mouse;
+	Tracker tracker;
 	FWindow init, tick, update, render, destroy;
 } Window;
 

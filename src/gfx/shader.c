@@ -43,5 +43,5 @@ void shader_bind(Shader *self) {
 }
 
 void shader_uniform_mat4(Shader *self, const char *name, mat4s mat) {
-	glUniformMatrix4fv(glGetUniformLocation(self->handle, name), 1, GL_FALSE, mat.raw);
+	glUniformMatrix4fv(glGetUniformLocation(self->handle, name), 1, GL_FALSE, (const GLfloat *)&mat.raw);
 }

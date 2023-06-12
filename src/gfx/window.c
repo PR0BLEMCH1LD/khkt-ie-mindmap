@@ -43,15 +43,16 @@ static void key_callback(GLFWwindow *handle, int key, int scancode, int action, 
 }
 
 static void cursor_pos_callback(GLFWwindow *handle, double xpos, double ypos) {
-	/*vec2s pos = { { xpos, ypos } };
+	vec2s pos = { { xpos, ypos } };
 
-	window.mouse.delta = window.mouse.not_first ?
-		glms_vec2_sub(pos, window.mouse.position) :
+	if (!window.mouse.buttons[GLFW_MOUSE_BUTTON_1].down && !window.mouse.buttons[GLFW_MOUSE_BUTTON_2].down) {
+		window.mouse.not_first = false;
+		return;
+	}
+
+	window.mouse.delta = window.mouse.not_first ? glms_vec2_sub(pos, window.mouse.position) :
 		GLMS_VEC2_ZERO, window.mouse.not_first = true;
-	window.mouse.delta.x = clamp(window.mouse.delta.x, -100.0f, 100.0f);
-	window.mouse.delta.y = clamp(window.mouse.delta.y, -100.0f, 100.0f);
-
-	window.mouse.position = pos;*/
+	window.mouse.position = pos;
 }
 
 static void button_array_update(u16 last, Button *buttons) {
@@ -62,6 +63,8 @@ static void button_array_update(u16 last, Button *buttons) {
 }
 
 static void init() {
+	window.tracker.last_second = NOW();
+
 	window.init();
 }
 
@@ -77,11 +80,11 @@ static void update() {
 
 	window.update();
 
-	//window.mouse.delta = GLMS_VEC2_ZERO;
+	window.mouse.delta = GLMS_VEC2_ZERO;
 }
 
 static void render() {
-	//window.frames++;
+	window.tracker.frames++;
 
 	window.render();
 }
@@ -112,7 +115,7 @@ void window_init(FWindow init, FWindow tick, FWindow update, FWindow render, FWi
 	glfwSetCursorPosCallback(window.handle, cursor_pos_callback);
 	glfwSetMouseButtonCallback(window.handle, mouse_button_callback);
 	glfwSetKeyCallback(window.handle, key_callback);
-
+	
 	gladLoadGL();
 }
 
@@ -120,6 +123,15 @@ void window_loop() {
 	init();
 
 	while (!glfwWindowShouldClose(window.handle)) {
+		const i64 now = NOW();
+
+		if (now - window.tracker.last_second > NS_PER_SECOND) {
+			window.tracker.fps = window.tracker.frames;
+			window.tracker.frames = 0;
+			window.tracker.last_second = now;
+			printf("FPS: %" PRId64 "\n", window.tracker.fps);
+		}
+
 		update();
 		render();
 

@@ -152,11 +152,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\gfx\bo.c" />
+    <ClCompile Include="src\gfx\camera.c" />
     <ClCompile Include="src\gfx\mesh.c" />
     <ClCompile Include="src\gfx\shader.c" />
     <ClCompile Include="src\gfx\vao.c" />
     <ClCompile Include="src\gfx\window.c" />
     <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\world\world.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gfx\camera.h" />
@@ -172,8 +174,11 @@
     <ClInclude Include="src\util\ivec3.h" />
     <ClInclude Include="src\util\ivec3s.h" />
     <ClInclude Include="src\util\macros.h" />
+    <ClInclude Include="src\util\fmath.h" />
+    <ClInclude Include="src\util\timer.h" />
     <ClInclude Include="src\util\types.h" />
     <ClInclude Include="src\util\utils.h" />
+    <ClInclude Include="src\world\world.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\default-3d.frag" />

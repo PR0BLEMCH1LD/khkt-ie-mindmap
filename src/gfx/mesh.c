@@ -22,6 +22,9 @@ void _mesh_init(Mesh *self, void *data, u64 data_size, u64 data_size_per_element
 }
 
 void mesh_render(Mesh *self) {
+	mat4s model = glms_translate(glms_mat4_identity(), (vec3s){ { 0.0f, 0.0f, -3.0f } });
+	shader_uniform_mat4(&state.shader, "m", glms_rotate(model, glfwGetTime(), (vec3s){ { 0.0f, 1.0f, 0.0f } }));
+
 	shader_bind(&state.shader);
 	vao_bind(&self->vao);
 	bo_bind(&self->ebo);

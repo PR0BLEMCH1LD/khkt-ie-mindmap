@@ -5,11 +5,11 @@
 #include "util/utils.h"
 
 #include "gfx/shader.h"
-#include "gfx/mesh.h"
+#include "world/world.h"
 
 typedef struct State {
 	Shader shader;
-	Mesh mesh;
+	World world;
 } State;
 
 extern State state;
