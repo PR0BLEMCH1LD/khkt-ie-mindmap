@@ -1,9 +1,11 @@
 #include "camera.h"
 #include "../gfx/window.h"
 
-void camera_init(Camera *self, f32 fov, f32 aspect_ratio, f32 znear, f32 zfar) {
-	self->projection = glms_perspective(fov, aspect_ratio, znear, zfar);
-	self->yaw = -PI_2;
+Camera camera_create(f32 fov, f32 aspect_ratio, f32 znear, f32 zfar) {
+	return (Camera){
+		.projection = glms_perspective(fov, aspect_ratio, znear, zfar),
+		.yaw = -PI_2,
+	};
 }
 
 void camera_update(Camera *self) {

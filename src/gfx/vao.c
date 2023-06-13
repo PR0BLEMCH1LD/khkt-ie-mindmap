@@ -1,7 +1,9 @@
 #include "vao.h"
 
-void vao_init(VAO *self) {
-	glGenVertexArrays(1, &self->handle);
+VAO vao_create() {
+	VAO vao;
+	glGenVertexArrays(1, &vao.handle);
+	return vao;
 }
 
 void vao_destroy(VAO *self) {

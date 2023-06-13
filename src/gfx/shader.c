@@ -25,13 +25,15 @@ static GLuint compile(const char *path, GLenum type) {
 	return handle;
 }
 
-void shader_init(Shader *self, const char *vpath, const char *fpath) {
-	self->vhandle = compile(vpath, GL_VERTEX_SHADER);
-	self->fhandle = compile(fpath, GL_FRAGMENT_SHADER);
-	self->handle = glCreateProgram();
-	glAttachShader(self->handle, self->vhandle);
-	glAttachShader(self->handle, self->fhandle);
-	glLinkProgram(self->handle);
+Shader shader_create(const char *vpath, const char *fpath) {
+	Shader shader;
+	shader.vhandle = compile(vpath, GL_VERTEX_SHADER);
+	shader.fhandle = compile(fpath, GL_FRAGMENT_SHADER);
+	shader.handle = glCreateProgram();
+	glAttachShader(shader.handle, shader.vhandle);
+	glAttachShader(shader.handle, shader.fhandle);
+	glLinkProgram(shader.handle);
+	return shader;
 }
 
 void shader_destroy(Shader *self) {

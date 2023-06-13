@@ -4,8 +4,8 @@
 State state;
 
 static void init() {
-	shader_init(&state.shader, "res/shaders/default-3d.vert", "res/shaders/default-3d.frag");
-	world_init(&state.world, 70);
+	state.shader = shader_create("res/shaders/default-3d.vert", "res/shaders/default-3d.frag");
+	state.world = world_create(70);
 
 	mesh_init(
 		&state.world.mesh,

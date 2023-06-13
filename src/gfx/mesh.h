@@ -25,10 +25,10 @@ typedef struct Mesh {
         typeof(self) _self = self;\
         const u32 add_data_count = NARG(__VA_ARGS__);\
         const u32 vertices_count = sizeof(vertices) / (sizeof(*(vertices)) * 3);\
-	    vao_init(&_self->vao);\
+	    _self->vao = vao_create();\
         _self->vbos = malloc(add_data_count * sizeof(BO));\
         for (u32 i = 0; i < add_data_count; i++) {\
-            bo_init(&_self->vbos[i], GL_ARRAY_BUFFER);\
+            _self->vbos[i] = bo_create(GL_ARRAY_BUFFER);\
         }\
         _bind_data(vertices, add_data_count);\
         DO_FOREACH(_bind_data, 1, __VA_ARGS__);\
@@ -47,7 +47,7 @@ typedef struct Mesh {
     do {\
         _self->indices.count = sizeof(data) / sizeof(*(data));\
         _self->indices.gl_type = match_gl_type(data);\
-        bo_init(&_self->ebo, GL_ELEMENT_ARRAY_BUFFER);\
+        _self->ebo = bo_create(GL_ELEMENT_ARRAY_BUFFER);\
         bo_buffer_data(&_self->ebo, data, sizeof(data));\
     } while (false)
 
