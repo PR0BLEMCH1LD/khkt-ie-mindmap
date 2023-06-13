@@ -6,6 +6,7 @@ State state;
 static void init() {
 	shader_init(&state.shader, "res/shaders/default-3d.vert", "res/shaders/default-3d.frag");
 	world_init(&state.world, 70);
+
 	mesh_init(
 		&state.world.mesh,
 		((f64[]){
@@ -18,6 +19,17 @@ static void init() {
 			0.5f, 0.5f, 0.5f,
 			0.5f, -0.5f, 0.5f,
 			-0.5f, -0.5f, 0.5f,
+		}),
+		((f32[]) {
+			 0.5f, 0.5f,  0.5f,
+			0.0f, 0.5f,  0.0f,
+			0.5f,  0.5f,  0.5f,
+			 0.5f,  0.5f,  0.5f,
+
+			 0.5f, 0.5f, 0.5f,
+			0.0f, 0.5f, 0.0f,
+			0.0f,  0.5f, 0.0f,
+			 0.5f,  0.5f, 0.5f,
 		}),
 		((u32[]){
 			3, 2, 1, 3, 0, 1,

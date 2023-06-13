@@ -130,7 +130,7 @@ void window_loop() {
 			window.tracker.fps = window.tracker.frames;
 			window.tracker.frames = 0;
 			window.tracker.last_second = now;
-			printf("FPS: %" PRId64 "\n", window.tracker.fps);
+			printf("FPS: %" PRIu32 "\n", window.tracker.fps);
 		}
 
 		update();
