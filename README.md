@@ -1,1 +1,1 @@
-# khkt-ie-3dmindmap
+# khkt-ie-mindmap
