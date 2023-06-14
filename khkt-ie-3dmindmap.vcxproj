@@ -163,6 +163,7 @@
   <ItemGroup>
     <ClInclude Include="src\gfx\camera.h" />
     <ClInclude Include="src\gfx\gfx.h" />
+    <ClInclude Include="src\gfx\material.h" />
     <ClInclude Include="src\gfx\mesh.h" />
     <ClInclude Include="src\gfx\shader.h" />
     <ClInclude Include="src\gfx\vao.h" />

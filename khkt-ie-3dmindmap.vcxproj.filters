@@ -95,6 +95,9 @@
     <ClInclude Include="src\util\fmath.h">
       <Filter>Source Files\util</Filter>
     </ClInclude>
+    <ClInclude Include="src\gfx\material.h">
+      <Filter>Source Files\gfx</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\default-3d.vert">

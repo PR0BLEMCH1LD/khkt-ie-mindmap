@@ -8,6 +8,7 @@ static void init() {
 	world_init(&state.world, 70);
 	mesh_init(
 		&state.world.mesh,
+		&(Material){ .a = 64 },
 		((f64[]){
 			-0.5f, 0.5f, -0.5f,
 			0.5f, 0.5f, -0.5f,
@@ -40,9 +41,9 @@ static void init() {
 		})
 	);
 
-	f32 *d;
-	mesh_get_data(&d, &state.world.mesh, 1);
-	printf("%f\n", d[23]);
+	u32 *d;
+	mesh_get_data(&d, &state.world.mesh, 2);
+	printf("%d\n", d[0]);
 
 	glEnable(GL_DEPTH_TEST);
 }

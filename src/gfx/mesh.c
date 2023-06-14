@@ -17,4 +17,5 @@ void mesh_destroy(Mesh *self) {
 	for (u32 i = 0; i < self->data.length; i++) {
 		bo_destroy(&mesh_get_mesh_buffer(self, i).bo);
 	}
+	free(self->data.raw);
 }
