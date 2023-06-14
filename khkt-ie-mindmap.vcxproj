@@ -24,6 +24,7 @@
     <ProjectGuid>{6f541af3-fc26-42f3-a92e-566754a996cd}</ProjectGuid>
     <RootNamespace>khktie3dmindmap</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>khkt-ie-mindmap</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -71,20 +72,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glfw\include;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glad\include;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\cglm\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glfw\src\Release;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glad\src;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\cglm\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\lib\glfw\include;$(ProjectDir)\lib\glad\include;$(ProjectDir)\lib\cglm\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\lib\glfw\src\Release;$(ProjectDir)\lib\glad\src;$(ProjectDir)\lib\cglm\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glfw\include;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glad\include;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\cglm\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glfw\src\Release;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glad\src;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\cglm\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\lib\glfw\include;$(ProjectDir)\lib\glad\include;$(ProjectDir)\lib\cglm\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\lib\glfw\src\Release;$(ProjectDir)\lib\glad\src;$(ProjectDir)\lib\cglm\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glfw\include;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glad\include;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\cglm\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glfw\src\Release;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glad\src;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\cglm\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\lib\glfw\include;$(ProjectDir)\lib\glad\include;$(ProjectDir)\lib\cglm\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\lib\glfw\src\Release;$(ProjectDir)\lib\glad\src;$(ProjectDir)\lib\cglm\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glfw\include;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glad\include;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\cglm\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glfw\src\Release;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\glad\src;C:\Users\alexd\source\repos\khkt-ie-3dmindmap\lib\cglm\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\lib\glfw\include;$(ProjectDir)\lib\glad\include;$(ProjectDir)\lib\cglm\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\lib\glfw\src\Release;$(ProjectDir)\lib\glad\src;$(ProjectDir)\lib\cglm\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

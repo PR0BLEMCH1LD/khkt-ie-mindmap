@@ -8,6 +8,7 @@ static void init() {
 	world_init(&state.world, 70);
 	mesh_init(
 		&state.world.mesh,
+		THREE_D,
 		&(Material){ .a = 64 },
 		((f64[]){
 			-0.5f, 0.5f, -0.5f,
