@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <stddef.h>
 
 #include <cglm/types.h>
 #include <cglm/cglm.h>

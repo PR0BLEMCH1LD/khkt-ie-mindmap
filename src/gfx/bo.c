@@ -1,10 +1,8 @@
 #include "bo.h"
 
-BO bo_create(GLint type) {
-	BO bo;
-	bo.type = type;
-	glGenBuffers(1, &bo.handle);
-	return bo;
+void bo_init(BO *self, GLint type) {
+	self->type = type;
+	glGenBuffers(1, &self->handle);
 }
 
 void bo_destroy(BO *self) {

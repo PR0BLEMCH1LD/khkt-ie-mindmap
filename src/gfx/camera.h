@@ -11,7 +11,7 @@ typedef struct Camera {
 	vec3s position;
 } Camera;
 
-Camera camera_create(f32 fov, f32 aspect_ratio, f32 znear, f32 zfar);
+void camera_init(Camera *self, f32 fov, f32 aspect_ratio, f32 znear, f32 zfar);
 void camera_update(Camera *self);
 
 #endif

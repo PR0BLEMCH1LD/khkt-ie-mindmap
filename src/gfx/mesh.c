@@ -7,12 +7,14 @@ void mesh_render(Mesh *self) {
 
 	shader_bind(&state.shader);
 	vao_bind(&self->vao);
-	bo_bind(&self->ebo);
-	glDrawElements(GL_TRIANGLES, self->indices.count, self->indices.gl_type, 0);
+	BaseMeshBuffer indices = mesh_get_mesh_buffer(self, self->data.length - 1);
+	bo_bind(&indices.bo);
+	glDrawElements(GL_TRIANGLES, indices.data.length, indices.gl_type, 0);
 }
 
 void mesh_destroy(Mesh *self) {
 	vao_destroy(&self->vao);
-	//bo_destroy(&self->vbo);
-	bo_destroy(&self->ebo);
+	for (u32 i = 0; i < self->data.length; i++) {
+		bo_destroy(&mesh_get_mesh_buffer(self, i).bo);
+	}
 }

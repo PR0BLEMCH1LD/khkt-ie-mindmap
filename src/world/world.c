@@ -2,10 +2,8 @@
 #include "../gfx/window.h"
 #include "../state.h"
 
-World world_create(f32 fov) {
-	return (World){
-		.camera = camera_create(fov, (f32)window.size.x / window.size.y, 0.01, 1000.0f)
-	};
+void world_init(World *self, f32 fov) {
+	camera_init(&self->camera, fov, (f32)window.size.x / window.size.y, 0.01, 1000.0f);
 }
 
 void world_update(World *self) {

@@ -4,9 +4,8 @@
 State state;
 
 static void init() {
-	state.shader = shader_create("res/shaders/default-3d.vert", "res/shaders/default-3d.frag");
-	state.world = world_create(70);
-
+	shader_init(&state.shader, "res/shaders/default-3d.vert", "res/shaders/default-3d.frag");
+	world_init(&state.world, 70);
 	mesh_init(
 		&state.world.mesh,
 		((f64[]){
@@ -21,15 +20,15 @@ static void init() {
 			-0.5f, -0.5f, 0.5f,
 		}),
 		((f32[]) {
-			 0.5f, 0.5f,  0.5f,
-			0.0f, 0.5f,  0.0f,
-			0.5f,  0.5f,  0.5f,
-			 0.5f,  0.5f,  0.5f,
+			0.75f, 0.75f, 0.75f,
+			0.0f, 0.75f, 0.0f,
+			0.75f, 0.75f, 0.75f,
+			0.75f, 0.75f, 0.75f,
 
-			 0.5f, 0.5f, 0.5f,
-			0.0f, 0.5f, 0.0f,
-			0.0f,  0.5f, 0.0f,
-			 0.5f,  0.5f, 0.5f,
+			0.75f, 0.75f, 0.75f,
+			0.0f, 0.75f, 0.0f,
+			0.0f, 0.75f, 0.0f,
+			0.75f, 0.75f, 0.75f,
 		}),
 		((u32[]){
 			3, 2, 1, 3, 0, 1,
@@ -40,6 +39,12 @@ static void init() {
 			0, 1, 5, 0, 4, 5
 		})
 	);
+
+	f32 *d;
+	mesh_get_data(&d, &state.world.mesh, 1);
+	printf("%f\n", d[23]);
+
+	glEnable(GL_DEPTH_TEST);
 }
 
 static void tick() {

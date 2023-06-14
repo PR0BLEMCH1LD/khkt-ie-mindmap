@@ -12,7 +12,7 @@ typedef struct World {
 	Mesh mesh;
 } World;
 
-World world_create(f32 fov);
+void world_init(World *self, f32 fov);
 void world_update(World *self);
 void world_render(World *self);
 void world_destroy(World *self);
