@@ -3,6 +3,12 @@
 State state;
 
 static void _config() {
+	state.window.size = (ivec2s){ { 1200, 720 } };
+	state.world.tickrate = 60;
+	state.world.camera.fov = 70;
+	state.world.camera.position = (vec3s){ { 0.0f, 0.0f, 0.0f } };
+	state.world.camera.speed = 1.0f;
+
 	state.config();
 }
 

@@ -3,10 +3,13 @@
 
 Defaults defaults;
 
-extern void defaults_shader_init();
-extern void defaults_material_init();
+#define DEFAULT_DECL(_name)\
+	do {\
+		extern void CONCAT(CONCAT(defaults_, _name), _init)();\
+		CONCAT(CONCAT(defaults_, _name), _init)();\
+	} while (false)
 
 void defaults_init() {
-	defaults_shader_init();
-	defaults_material_init();
+	DEFAULT_DECL(shader);
+	DEFAULT_DECL(material);
 }
