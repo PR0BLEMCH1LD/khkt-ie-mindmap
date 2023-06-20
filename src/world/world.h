@@ -8,7 +8,6 @@
 #include "../gfx/mesh.h"
 
 typedef struct World {
-	f32 fov;
 	u32 tickrate;
 	Camera camera;
 	Mesh mesh;

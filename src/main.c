@@ -3,8 +3,9 @@
 static void _config() {
 	state.window.size = (ivec2s){ { 1200, 720 } };
 	state.world.tickrate = 120;
-	state.world.fov = 45;
+	state.world.camera.fov = 45;
 	state.world.camera.position = (vec3s){ { 0.0f, 0.0f, 0.0f } };
+	state.world.camera.speed = 2.f;
 }
 
 static void _init() {

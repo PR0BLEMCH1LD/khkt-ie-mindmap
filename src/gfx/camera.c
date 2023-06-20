@@ -14,15 +14,15 @@ void camera_tick(Camera *self) {
 
 	if (state.window.mouse.buttons[GLFW_MOUSE_BUTTON_2].down) {
 		if (!state.window.mouse.buttons[GLFW_MOUSE_BUTTON_1].down) {
-			hor_movement = glms_vec3_scale(right, state.window.mouse.delta.x);
-			ver_movement = glms_vec3_scale(forward, -state.window.mouse.delta.y);
+			hor_movement = glms_vec3_scale(right, -state.window.mouse.delta.x);
+			ver_movement = glms_vec3_scale(forward, state.window.mouse.delta.y);
 		}
 		else {
-			hor_movement = glms_vec3_scale(right, state.window.mouse.delta.x);
-			ver_movement = glms_vec3_scale(up, -state.window.mouse.delta.y);
+			hor_movement = glms_vec3_scale(right, -state.window.mouse.delta.x);
+			ver_movement = glms_vec3_scale(up, state.window.mouse.delta.y);
 		}
 
-		movement = glms_vec3_scale(glms_vec3_add(hor_movement, ver_movement), 0.0075f);
+		movement = glms_vec3_scale(glms_vec3_add(hor_movement, ver_movement), self->speed / state.world.tickrate);
 		self->position = glms_vec3_add(self->position, movement);
 	}
 }
