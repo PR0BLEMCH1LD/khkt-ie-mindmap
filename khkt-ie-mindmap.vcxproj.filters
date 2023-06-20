@@ -25,6 +25,9 @@
     <Filter Include="Source Files\world">
       <UniqueIdentifier>{5056ec06-aa2c-41d1-920e-6b48eccbc9c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\default">
+      <UniqueIdentifier>{f2cbd2c9-0f3e-474b-8d5a-51960bd4ecb0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.c">
@@ -50,6 +53,18 @@
     </ClCompile>
     <ClCompile Include="src\world\world.c">
       <Filter>Source Files\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\state.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\default\defaults.c">
+      <Filter>Source Files\default</Filter>
+    </ClCompile>
+    <ClCompile Include="src\default\shader.c">
+      <Filter>Source Files\default</Filter>
+    </ClCompile>
+    <ClCompile Include="src\default\material.c">
+      <Filter>Source Files\default</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="src\gfx\material.h">
       <Filter>Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\default\defaults.h">
+      <Filter>Source Files\default</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

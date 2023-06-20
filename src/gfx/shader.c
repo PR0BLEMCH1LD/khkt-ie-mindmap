@@ -1,6 +1,6 @@
 #include "shader.h"
 
-static GLuint compile(const char *path, GLenum type) {
+static GLuint _compile(const char *path, GLenum type) {
 	FILE *f;
 	char *text;
 	long len;
@@ -26,8 +26,8 @@ static GLuint compile(const char *path, GLenum type) {
 }
 
 void shader_init(Shader *self, const char *vpath, const char *fpath) {
-	self->vhandle = compile(vpath, GL_VERTEX_SHADER);
-	self->fhandle = compile(fpath, GL_FRAGMENT_SHADER);
+	self->vhandle = _compile(vpath, GL_VERTEX_SHADER);
+	self->fhandle = _compile(fpath, GL_FRAGMENT_SHADER);
 	self->handle = glCreateProgram();
 	glAttachShader(self->handle, self->vhandle);
 	glAttachShader(self->handle, self->fhandle);

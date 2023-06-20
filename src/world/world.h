@@ -8,11 +8,12 @@
 #include "../gfx/mesh.h"
 
 typedef struct World {
+	f32 fov;
 	Camera camera;
 	Mesh mesh;
 } World;
 
-void world_init(World *self, f32 fov);
+void world_init(World *self);
 void world_update(World *self);
 void world_render(World *self);
 void world_destroy(World *self);

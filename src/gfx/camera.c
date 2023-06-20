@@ -1,5 +1,5 @@
 #include "camera.h"
-#include "../gfx/window.h"
+#include "../state.h"
 
 void camera_init(Camera *self, f32 fov, f32 aspect_ratio, f32 znear, f32 zfar) {
 	self->projection = glms_perspective(fov, aspect_ratio, znear, zfar);
@@ -7,8 +7,8 @@ void camera_init(Camera *self, f32 fov, f32 aspect_ratio, f32 znear, f32 zfar) {
 }
 
 void camera_update(Camera *self) {
-	self->yaw -= window.mouse.delta.x / 750.0f;
-	self->pitch = fclampf(self->pitch + window.mouse.delta.y / 750.0f, -PI_2 + F32_EPSILON, PI_2 - F32_EPSILON);
+	self->yaw -= state.window.mouse.delta.x / 750.0f;
+	self->pitch = fclampf(self->pitch + state.window.mouse.delta.y / 750.0f, -PI_2 + F32_EPSILON, PI_2 - F32_EPSILON);
 	self->direction = glms_vec3_normalize((vec3s){ {
 		cosf(self->pitch) * cosf(self->yaw),
 		sinf(self->pitch),

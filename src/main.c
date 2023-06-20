@@ -1,26 +1,26 @@
 #include "state.h"
-#include "gfx/window.h"
 
-State state;
+static void _config() {
+	state.window.size = (ivec2s){ { 1200, 720 } };
+	state.world.fov = 70;
+}
 
-static void init() {
-	shader_init(&state.shader, "res/shaders/default-3d.vert", "res/shaders/default-3d.frag");
-	world_init(&state.world, 70);
+static void _init() {
+	f64 vertices[] = {
+		-0.5f, 0.5f, -0.5f,
+		0.5f, 0.5f, -0.5f,
+		0.5f, -0.5f, -0.5f,
+		-0.5f, -0.5f, -0.5f,
+
+		-0.5f, 0.5f, 0.5f,
+		0.5f, 0.5f, 0.5f,
+		0.5f, -0.5f, 0.5f,
+		-0.5f, -0.5f, 0.5f,
+	};
 	mesh_init(
 		&state.world.mesh,
 		THREE_D,
-		&(Material){ .a = 64 },
-		((f64[]){
-			-0.5f, 0.5f, -0.5f,
-			0.5f, 0.5f, -0.5f,
-			0.5f, -0.5f, -0.5f,
-			-0.5f, -0.5f, -0.5f,
-
-			-0.5f, 0.5f, 0.5f,
-			0.5f, 0.5f, 0.5f,
-			0.5f, -0.5f, 0.5f,
-			-0.5f, -0.5f, 0.5f,
-		}),
+		vertices,
 		((f32[]) {
 			0.75f, 0.75f, 0.75f,
 			0.0f, 0.75f, 0.0f,
@@ -41,37 +41,24 @@ static void init() {
 			0, 1, 5, 0, 4, 5
 		})
 	);
-
-	u32 *d;
-	mesh_get_data(&d, &state.world.mesh, 2);
-	printf("%d\n", d[0]);
-
-	glEnable(GL_DEPTH_TEST);
 }
 
-static void tick() {
+static void _tick() {
 
 }
 
-static void update() {
-	world_update(&state.world);
+static void _update() {
+
 }
 
-static void render() {
-	glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+static void _render() {
 
-	world_render(&state.world);
 }
 
-static void destroy() {
-	shader_destroy(&state.shader);
-	world_destroy(&state.world);
+static void _destroy() {
+
 }
 
 int main() {
-	window.size = (ivec2s){ { 1200, 720 } };
-	window_init(init, tick, update, render, destroy);
-
-	window_loop();
+	program_start(_config, _init, _tick, _update, _render, _destroy);
 }
