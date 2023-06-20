@@ -9,11 +9,13 @@
 
 typedef struct World {
 	f32 fov;
+	u32 tickrate;
 	Camera camera;
 	Mesh mesh;
 } World;
 
 void world_init(World *self);
+void world_tick(World *self);
 void world_update(World *self);
 void world_render(World *self);
 void world_destroy(World *self);

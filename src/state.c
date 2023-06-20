@@ -16,6 +16,8 @@ static void _init() {
 }
 
 static void _tick() {
+	world_tick(&state.world);
+
 	state.tick();
 }
 

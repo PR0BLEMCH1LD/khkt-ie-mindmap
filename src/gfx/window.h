@@ -21,9 +21,11 @@ typedef struct Keyboard {
 } Keyboard;
 
 typedef struct Tracker {
+	u64 last_frame, frame_delta;
 	u64 last_second;
-	u32 frames;
-	u32 fps;
+	u32 frames, ticks;
+	u32 fps, tps;
+	u64 tick_remainder;
 } Tracker;
 
 typedef struct Window {

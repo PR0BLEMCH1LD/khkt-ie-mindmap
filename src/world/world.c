@@ -5,6 +5,10 @@ void world_init(World *self) {
 	camera_init(&self->camera, self->fov, (f32)state.window.size.x / state.window.size.y, 0.01, 1000.0f);
 }
 
+void world_tick(World *self) {
+	camera_tick(&self->camera);
+}
+
 void world_update(World *self) {
 	camera_update(&self->camera);
 }

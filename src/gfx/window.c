@@ -65,13 +65,15 @@ static void _button_array_update(u16 last, Button *buttons) {
 
 static void _init() {
 	window->mouse.not_first = false;
+	window->tracker.last_frame = NOW();
 	window->tracker.last_second = NOW();
+	window->tracker.tick_remainder = 0;
 
 	window->init();
 }
 
 static void _tick() {
-	//window->ticks++;
+	window->tracker.ticks++;
 
 	window->tick();
 }
@@ -128,12 +130,27 @@ void window_loop() {
 	while (!glfwWindowShouldClose(window->handle)) {
 		const i64 now = NOW();
 
+		window->tracker.frame_delta = now - window->tracker.last_frame;
+		window->tracker.last_frame = now;
+
 		if (now - window->tracker.last_second > NS_PER_SECOND) {
 			window->tracker.fps = window->tracker.frames;
+			window->tracker.tps = window->tracker.ticks;
 			window->tracker.frames = 0;
+			window->tracker.ticks = 0;
 			window->tracker.last_second = now;
-			printf("FPS: %" PRIu32 "\n", window->tracker.fps);
+			printf("FPS: %" PRIu32 " | TPS: %" PRIu32 "\n", window->tracker.fps, window->tracker.tps);
 		}
+
+		const u64 NS_PER_TICK = (NS_PER_SECOND / state.world.tickrate);
+		u64 tick_time = window->tracker.frame_delta + window->tracker.tick_remainder;
+
+		while (tick_time > NS_PER_TICK) {
+			_tick();
+			tick_time -= NS_PER_TICK;
+		}
+
+		window->tracker.tick_remainder = max(tick_time, 0);
 
 		_update();
 		_render();
