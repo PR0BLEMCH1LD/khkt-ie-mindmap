@@ -53,7 +53,7 @@ typedef enum MeshType {
 
 #define mesh_init(_self, _type, ...)\
     do {\
-        typeof(_self) __self = _self;\
+        __auto_type __self = _self;\
         vao_init(&__self->vao);\
         if (COMPARE_TYPES(typeof(ARG1(__VA_ARGS__)), Material *)) {\
             __self->material = ARG1(__VA_ARGS__);\

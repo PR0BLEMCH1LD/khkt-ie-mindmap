@@ -26,7 +26,7 @@ void camera_tick(Camera *self) {
 
 	vec3s movement = glms_vec3_scale(
 						glms_vec3_add(hor_movement, ver_movement),
-						self->speed / state.world.tickrate
+						self->speed * state.world.tickrate / state.window.tracker.frame_delta * 500.0f
 					 );
 	self->position = glms_vec3_add(self->position, movement);
 }

@@ -79,6 +79,7 @@ static void _tick() {
 }
 
 static void _update() {
+	//printf("%f %f\n", window->mouse.delta.x, window->mouse.delta.y);
 	_button_array_update(GLFW_MOUSE_BUTTON_LAST, window->mouse.buttons);
 	_button_array_update(GLFW_KEY_LAST, window->keyboard.keys);
 
@@ -121,6 +122,8 @@ void window_init(FWindow init, FWindow tick, FWindow update, FWindow render, FWi
 	glfwSetMouseButtonCallback(window->handle, _mouse_button_callback);
 	glfwSetKeyCallback(window->handle, _key_callback);
 	
+	glfwSwapInterval(window->vsync);
+
 	gladLoadGL();
 }
 

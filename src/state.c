@@ -4,6 +4,7 @@ State state;
 
 static void _config() {
 	state.window.size = (ivec2s){ { 1200, 720 } };
+	state.window.vsync = true;
 	state.world.tickrate = 60;
 	state.world.camera.fov = 70;
 	state.world.camera.position = (vec3s){ { 0.0f, 0.0f, 0.0f } };

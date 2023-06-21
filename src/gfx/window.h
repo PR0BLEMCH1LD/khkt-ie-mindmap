@@ -34,6 +34,7 @@ typedef struct Window {
 	Keyboard keyboard;
 	Mouse mouse;
 	Tracker tracker;
+	bool vsync;
 	FWindow init, tick, update, render, destroy;
 } Window;
 

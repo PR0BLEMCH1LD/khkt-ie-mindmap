@@ -5,10 +5,10 @@ void mesh_render(Mesh *self) {
 	mat4s model = glms_translate(glms_mat4_identity(), (vec3s){ { 0.0f, 0.0f, -3.0f } });
 	shader_uniform_mat4(self->material->shader, "m", glms_rotate(model, glfwGetTime(), (vec3s){ { 0.0f, 1.0f, 0.0f } }));
 
-	shader_bind(self->material->shader);
-	vao_bind(&self->vao);
 	BaseMeshBuffer indices = mesh_get_mesh_buffer(self, self->data.length - 1);
 	bo_bind(&indices.bo);
+	vao_bind(&self->vao);
+	shader_bind(self->material->shader);
 	glDrawElements(GL_TRIANGLES, indices.data.length, indices.gl_type, 0);
 }
 
