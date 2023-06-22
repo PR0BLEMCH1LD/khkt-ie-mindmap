@@ -11,6 +11,8 @@
 #include <cglm/cglm.h>
 #include <cglm/struct.h>
 
+#include <glib.h>
+
 #include "types.h"
 #include "macros.h"
 #include "fmath.h"

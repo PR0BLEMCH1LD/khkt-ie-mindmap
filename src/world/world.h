@@ -10,7 +10,7 @@
 typedef struct World {
 	u32 tickrate;
 	Camera camera;
-	Mesh mesh;
+	GArray *meshes;
 } World;
 
 void world_init(World *self);

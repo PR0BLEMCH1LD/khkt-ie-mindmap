@@ -79,7 +79,6 @@ static void _tick() {
 }
 
 static void _update() {
-	//printf("%f %f\n", window->mouse.delta.x, window->mouse.delta.y);
 	_button_array_update(GLFW_MOUSE_BUTTON_LAST, window->mouse.buttons);
 	_button_array_update(GLFW_KEY_LAST, window->keyboard.keys);
 

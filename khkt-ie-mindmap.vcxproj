@@ -46,11 +46,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>C:\lib\glib-2.0\include;C:\include\glib-2.0;$(ProjectDir)\lib\glfw\include;$(ProjectDir)\lib\glad\include;$(ProjectDir)\lib\cglm\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\lib\glib-2.0;C:\lib\;$(ProjectDir)\lib\glfw\src\Release;$(ProjectDir)\lib\glad\src;$(ProjectDir)\lib\cglm\Release;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\lib\;$(ProjectDir)\lib\glfw\src\Release;$(ProjectDir)\lib\glad\src;$(ProjectDir)\lib\cglm\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\lib\glib-2.0\include;C:\include\glib-2.0;$(ProjectDir)\lib\glfw\include;$(ProjectDir)\lib\glad\include;$(ProjectDir)\lib\cglm\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\lib\glib-2.0;C:\lib\;$(ProjectDir)\lib\glfw\src\Release;$(ProjectDir)\lib\glad\src;$(ProjectDir)\lib\cglm\Release;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\lib\;$(ProjectDir)\lib\glfw\src\Release;$(ProjectDir)\lib\glad\src;$(ProjectDir)\lib\cglm\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

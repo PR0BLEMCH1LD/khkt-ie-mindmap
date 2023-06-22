@@ -40,6 +40,4 @@
         default: 0\
     )
 
-#define list(_type) struct { _type *raw; u32 length; }
-
 #endif
