@@ -152,7 +152,7 @@ void window_loop() {
 			tick_time -= NS_PER_TICK;
 		}
 
-		window->tracker.tick_remainder = max(tick_time, 0);
+		window->tracker.tick_remainder = fmax(tick_time, 0);
 
 		_update();
 		_render();

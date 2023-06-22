@@ -65,11 +65,18 @@ typedef struct Mesh {
 
 #define mesh_init(_self, _type, _position,  ...)\
     do {\
+        enum {\
+            has_material = COMPARE_TYPES(typeof(ARG1(__VA_ARGS__)), Material *)\
+        };\
+        static_assert(\
+            (has_material && NARG(__VA_ARGS__) - 1 > 1) || (!has_material && NARG(__VA_ARGS__) > 1),\
+            "not enough arguments"\
+        );\
         __auto_type __self = _self;\
         __self->type = _type;\
         __self->position = _position;\
         vao_init(&__self->vao);\
-        if (COMPARE_TYPES(typeof(ARG1(__VA_ARGS__)), Material *)) {\
+        if (has_material) {\
             __self->material = ARG1(__VA_ARGS__);\
             __self->data.length = NARG(__VA_ARGS__) - 1;\
             __self->data.raw = malloc(__self->data.length * sizeof(BaseMeshBuffer));\
